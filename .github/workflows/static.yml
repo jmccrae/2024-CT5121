@@ -36,9 +36,9 @@ jobs:
       - name: Copy slides
         run: 'cp lectures/*.md slides'
       - name: Sed1
-        run: "sed -i 's/\$\$$/$$`/' slides/*.md"
+        run: "sed -i 's/\\$\\$$/$$`/' slides/*.md"
       - name: Sed2
-        run: "sed -i 's/^\$\$/`$$/' slides/*.md"
+        run: "sed -i 's/^\\$\\$/`$$/' slides/*.md"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
