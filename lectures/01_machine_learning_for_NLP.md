@@ -1,10 +1,14 @@
 # Machine Learning for NLP
 
+---
+
 ## What is a neural network
 
 * Computational model inspired by the functioning of the human brain
 * Building block of deep learning
 * Interconnected layers known as **neurons** organized into **layers**
+
+---
 
 ## Structure of a neural network
 
@@ -14,6 +18,8 @@
 * Activation Function
 * Output Layer
 
+---
+
 ## Input Layer
 
 Takes the input signal
@@ -22,11 +28,15 @@ In NLP this is typically text
 
 Must be mapped to continuous values by **word embeddings**
 
+---
+
 ## Hidden Layer
 
 Intermediate layer between input and output layers
 
 Processes information from previous layer to the next layer
+
+---
 
 ## Weights and Biases
 
@@ -41,6 +51,8 @@ Where
 * $\mathbf{A}$ is a learned weight matrix
 * $\mathbf{b}$ is a learned bias
 
+---
+
 ## Activation Functions
 
 Activation function introduces a **non-linearity** into a network
@@ -51,19 +63,27 @@ Popular choices:
 * Hyperbolic Tangent
 * ReLU and relatives
 
+---
+
 ## Sigmoid Function
 
 $$\sigma(x) = \frac{e^x}{1+e^x}$$
+
+---
 
 ## Hyperbolic Tangent Fuction
 
 $$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
 
+---
+
 ## ReLU - Rectified Linear Unit
 
-$$\text{relu}(x) = \left\{ \begin{array}{c} x ~~\text{if}~~ x > 0 \\ 0 ~~\text{otherwise}~~ \end{array} \right.$$
+`$$\text{relu}(x) = \left\lbrace \begin{array}{cc} x & \text{if}~x > 0 \\ 0 & \text{otherwise} \end{array} \right.$$`
 
 There are also smooth variants of ReLU such as **softplus** and **GeLU**
+
+---
 
 ## Output Layer
 
@@ -71,11 +91,15 @@ Produces the result or predictions
 
 Depends on the task
 
+---
+
 ## Softmax Output
 
-$$\text{softmax}_i(\mathbf{x}) = \frac{e^{x_i}}{\sum_{j=1}^N e^{x_j}}$$
+`$$\text{softmax}_i(\mathbf{x}) = \frac{e^{x_i}}{\sum_{j=1}^N e^{x_j}}$$`
 
 Output is a probability distribution over the outcomes.
+
+---
 
 ## Non-linear optimization
 
@@ -85,15 +109,19 @@ $$f(\mathbf{x} ; \mathbf{w})$$
 
 Where $\mathbf{x}$ are the inputs and $\mathbf{w}$ are the learnable weights
 
+---
+
 ## A neural network
 
 $$f(\mathbf{x} ; \mathbf{w}) = f_n(\mathbf{h_n}; \mathbf{w_n})$$
 
-$$\mathbf{h_n} = f_{n-1}(\mathbf{h_{n-1}; \mathbf{w_{n-1}})$$
+$$\mathbf{h_n} = f_{n-1}(\mathbf{h_{n-1}}; \mathbf{w_{n-1}})$$
 
 ...
 
 $$\mathbf{h_1} = f_0(\mathbf{x}; \mathbf{w_{n-1}}$$
+
+---
 
 ## How to train a neural network?
 
@@ -102,6 +130,8 @@ $$\mathbf{h_1} = f_0(\mathbf{x}; \mathbf{w_{n-1}}$$
 3. Forward Propogation
 4. Backpropogation
 5. Update Weights and Biases
+
+---
 
 ## Initialize Weights and Biases
 
@@ -114,6 +144,8 @@ Good Choices:
 
 * Random moderate values
 
+---
+
 ## Loss functions
 
 The loss functions measures the quality of the current solution
@@ -122,11 +154,15 @@ The goal of optimization is to minimize this function
 
 $$\min_\mathbf{w} \mathcal{L}(\mathbf{w})$$
 
+---
+
 ## Mean Squared Error
 
 Measures the Euclidean loss between the system output and the data
 
 $$\mathcal{L}(\mathbf{w}) = \sum (y_i - f(x_i; \mathbf{w}))^2$$
+
+---
 
 ## Cross-Entropy Loss
 
@@ -136,9 +172,13 @@ $$\mathcal{L}(\mathbf{w}) = \sum -(y_i \log(p_i) + (1 - y_i) \log(1 - p_i))$$
 
 Assume $0 \leq y_i \leq 1$, $0 < p_i < 1$
 
+---
+
 ## Forward Propogation
 
 Calculate all the results and all the hidden layer values
+
+---
 
 ## Backpropogation
 
@@ -149,6 +189,8 @@ $$\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$$
 This is done by backpropogation, e.g.,
 
 $$\frac{\partial \mathcal{L}}\partial \mathbf{w_i}} = \frac{\partial \mathcal{L}}\partial \mathbf{h_i}} \frac{\partial \mathbf{h_i}}\partial \mathbf{w_i}}$$
+
+---
 
 ## Automatric Differentiation
 
@@ -162,6 +204,8 @@ f = lambda x: x**3 + 2*x**2 - 3*x + 1
 dfdx = jax.grad(f)
 ```
 
+---
+
 ## Update Weights and Bias
 
 We update the weights by gradient descent
@@ -170,11 +214,15 @@ $$\mathbf{w}' \leftarrow \mathbf{w} - \eta \frac{\partial \mathcal{L}}{\partial 
 
 $\eta$ is a magic constant called the **learning rate**.
 
+---
+
 ## Issues with Gradient Descent
 
 1. May not converge
 2. Loss is expensive to calculate
 3. Learning rate needs to vary
+
+---
 
 ## Stochastic Gradient Descent
 
@@ -184,6 +232,8 @@ called a **mini-batch** and evaluate the loss function on this
 * Much faster (only using a 20-100 data points)
 * Avoids some training issues (due to random selection)
 
+---
+
 ## Adaptive Learning Rate
 
 We have a learning rate for each parameter
@@ -191,6 +241,8 @@ We have a learning rate for each parameter
 $$w_i' \leftarrow w_i - \eta_i \frac{\partial \mathcal{L}}{\partial w_i}$$
 
 Most populare method to calculate this is **Adam** an adaptive method with moments
+
+---
 
 ## Topics for discussion this week
 
