@@ -127,8 +127,8 @@ $$\mathbf{h_1} = f_0(\mathbf{x}; \mathbf{w_{n-1}}$$
 
 1. Initialize Weights and Biases
 2. Define the Loss Function
-3. Forward Propogation
-4. Backpropogation
+3. Forward Propagation
+4. Backpropagation
 5. Update Weights and Biases
 
 ---
@@ -186,7 +186,7 @@ We calculate the gradient of the function in order to classify
 
 $$\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$$
 
-This is done by backpropogation, e.g.,
+This is done by backpropagation, e.g.,
 
 $$\frac{\partial \mathcal{L}}{\partial \mathbf{w_i}} = \frac{\partial \mathcal{L}}{\partial \mathbf{h_i}} \frac{\partial \mathbf{h_i}}{\partial \mathbf{w_i}}$$
 
@@ -240,7 +240,7 @@ We have a learning rate for each parameter
 
 $$w_i' \leftarrow w_i - \eta_i \frac{\partial \mathcal{L}}{\partial w_i}$$
 
-Most populare method to calculate this is **Adam** an adaptive method with moments
+Most popular method to calculate this is **Adam** an adaptive method with moments
 
 ---
 
