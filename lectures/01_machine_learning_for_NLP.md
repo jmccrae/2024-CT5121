@@ -20,6 +20,10 @@
 
 ---
 
+![Neural Network](img/neural_network.png)
+
+---
+
 ## Input Layer
 
 Takes the input signal
@@ -142,6 +146,10 @@ $$\mathbf{h_1} = f_0(\mathbf{x}; \mathbf{w_{n-1}}$$
 3. Forward Propagation
 4. Backpropagation
 5. Update Weights and Biases
+
+---
+
+![Gradient Descent](img/gradient_descent.png)
 
 ---
 

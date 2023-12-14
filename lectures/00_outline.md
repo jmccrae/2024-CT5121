@@ -60,10 +60,12 @@ No lecture on Feb 5th (public holiday)
 
 Please read lecture content ahead of lecture and we will discuss it in 
 class and work on practical examples.
+
 ---
 ## Labs
 
 Labs are Friday 1-3. Work will be related to assignment
+
 ---
 ## Assignment
 
@@ -75,6 +77,7 @@ be responsible for one component.
 * Assignment 2: Due Mar 24th
     * Final report on the developed component
     * Demonstration of the system in final lab(s)
+
 ---
 ## Assignment Topic
 
