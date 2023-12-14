@@ -10,7 +10,7 @@
 1. Machine Learning for NLP
 2. You choose!
 ---
-## You choose
+## You choose?!
 
 At the end of each week we will have a poll for the next topic and we will 
 proceed with one of these topics.
