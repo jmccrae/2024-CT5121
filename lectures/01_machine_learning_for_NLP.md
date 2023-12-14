@@ -107,9 +107,7 @@ Depends on the task
 
 ## Softmax Output
 
-$$\text{softmax}_i(\mathbf{x})$$
-
-$$\text{softmax}_i(\mathbf{x}) = \frac{e^{x_i}}{\sum_{j=1}^N e^{x_j}}$$
+$$\text{softmax}_i(\mathbf{x}) = \frac{e^{x_i}}{\sum_j e^{x_j}}$$
 
 Output is a probability distribution over the outcomes.
 
