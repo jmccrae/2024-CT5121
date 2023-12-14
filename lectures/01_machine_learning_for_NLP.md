@@ -69,11 +69,15 @@ Popular choices:
 
 $$\sigma(x) = \frac{e^x}{1+e^x}$$
 
+![Sigmoid Function](img/sigmoid.png)
+
 ---
 
 ## Hyperbolic Tangent Fuction
 
 $$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
+
+![Tanh Function](img/tanh.png)
 
 ---
 
@@ -82,6 +86,8 @@ $$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
 $$\text{relu}(x) = \left\lbrace \begin{array}{cc} x & \text{if}~x > 0 \\ 0 & \text{otherwise} \end{array} \right.$$
 
 There are also smooth variants of ReLU such as **softplus** and **GeLU**
+
+![ReLU Function](img/relu.png)
 
 ---
 
