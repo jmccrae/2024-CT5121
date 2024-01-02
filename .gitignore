@@ -2,3 +2,6 @@ reveal.js-master
 
 master.zip
 slides/*.md
+env
+
+lectures/00_outline.ipynb
