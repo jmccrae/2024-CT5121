@@ -3,6 +3,9 @@
 ## Lecturers
 
 * Dr. John P. McCrae
+
+### Guest Lecturers
+
 * Dr. Atul Kr. Ojha
 ---
 ## Lecture Plan
