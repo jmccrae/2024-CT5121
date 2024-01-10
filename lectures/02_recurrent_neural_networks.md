@@ -80,9 +80,9 @@ $$
 y_i = f(\mathbf{W}_{hy} h_i + b_y)
 $$
 
-`$$
+$$
 h_i = g(\mathbf{W}_{hh} h_{i-1} + \mathbf{W}_{xh} x_i + b_h)
-$$`
+$$
 
 Initially, $h_0$ is set to zero. $f$ and $g$ are non-linear activation functions.
 
@@ -141,9 +141,9 @@ $$
 y = f(\sum_{i=1}^n \alpha_i h_i)
 $$
 
-`$$
+$$
 \alpha_i = \frac{\exp(\mathbf{w}_{\alpha}^T h_i)}{\sum_{j=1}^n \exp(\mathbf{w}_{\alpha}^T h_j)}
-$$`
+$$
 
 ---
 
@@ -180,17 +180,17 @@ https://explosion.ai/blog/deep-learning-formula-nlp
 
 ## Bidirectional RNNs (formulae)
 
-`$$
+$$
 \overrightarrow{h}_i = f(\mathbf{W}_{\overrightarrow{hh}} \overrightarrow{h}_{i-1} + \mathbf{W}_{\overrightarrow{xh}} x_i + b_{\overrightarrow{h}})
-$$`
+$$
 
-`$$
+$$
 \overleftarrow{h}_i = f(\mathbf{W}_{\overleftarrow{hh}} \overleftarrow{h}_{i+1} + \mathbf{W}_{\overleftarrow{xh}} x_i + b_{\overleftarrow{h}})
-$$`
+$$
 
-`$$
+$$
 h_i = \overrightarrow{h}_i + \overleftarrow{h}_i
-$$`
+$$
 
 ---
 
