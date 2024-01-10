@@ -38,13 +38,9 @@ In other tasks, such as computer vision images can be scaled to a fixed size. Ho
   - $h^{t}$: Hidden state at time $t$.
   - $y^{t}$: Output at time $t$.
 
-$$
-h^{t} = f(h^{t-1}, x^{t}) 
-$$
+$$ h^{t} = f(h^{t-1}, x^{t}) $$
 
-$$
-y^{t} = g(h^{t})
-$$
+$$ y^{t} = g(h^{t}) $$
 
 ---
 
@@ -52,13 +48,9 @@ $$
 
 We can use the same weights for every time step.
 
-$$
-h^{t} = f(h^{t-1}, x^{t}; \mathbf{W}) 
-$$
+$$ h^{t} = f(h^{t-1}, x^{t}; \mathbf{W}) $$
 
-$$
-y^{t} = g(h^{t}; \mathbf{W})
-$$
+$$ y^{t} = g(h^{t}; \mathbf{W}) $$
 
 ---
 
@@ -76,13 +68,9 @@ Networks can be unrolled in time.
 
 ## Simple RNN
 
-$$
-y_i = f(\mathbf{W}_{hy} h_i + b_y)
-$$
+$$ y_i = f(\mathbf{W}_{hy} h_i + b_y) $$
 
-$$
-h_i = g(\mathbf{W}_{hh} h_{i-1} + \mathbf{W}_{xh} x_i + b_h)
-$$
+$$ h_i = g(\mathbf{W}_{hh} h_{i-1} + \mathbf{W}_{xh} x_i + b_h) $$
 
 Initially, $h_0$ is set to zero. $f$ and $g$ are non-linear activation functions.
 
@@ -120,9 +108,7 @@ Again a softmax output layer can be used to compute the probability distribution
 
 Simple use of an RNN is as an acceptor. The final state of the RNN is used to classify the input sequence.
 
-$$
-y = f(\mathbf{W}_{hy} h_n + b_y)
-$$
+$$ y = f(\mathbf{W}_{hy} h_n + b_y) $$
 
 No prediction is made for other time steps.
 
@@ -137,13 +123,9 @@ No prediction is made for other time steps.
 
 Instead of discarding the hidden states, we can use them to compute a weighted sum of the hidden states.
 
-$$
-y = f(\sum_{i=1}^n \alpha_i h_i)
-$$
+$$ y = f(\sum_{i=1}^n \alpha_i h_i) $$
 
-$$
-\alpha_i = \frac{\exp(\mathbf{w}_{\alpha}^T h_i)}{\sum_{j=1}^n \exp(\mathbf{w}_{\alpha}^T h_j)}
-$$
+$$ \alpha_i = \frac{\exp(\mathbf{w}_{\alpha}^T h_i)}{\sum_{j=1}^n \exp(\mathbf{w}_{\alpha}^T h_j)} $$
 
 ---
 
@@ -180,17 +162,11 @@ https://explosion.ai/blog/deep-learning-formula-nlp
 
 ## Bidirectional RNNs (formulae)
 
-$$
-\overrightarrow{h}_i = f(\mathbf{W}_{\overrightarrow{hh}} \overrightarrow{h}_{i-1} + \mathbf{W}_{\overrightarrow{xh}} x_i + b_{\overrightarrow{h}})
-$$
+$$ \overrightarrow{h}_i = f(\mathbf{W}_{\overrightarrow{hh}} \overrightarrow{h}_{i-1} + \mathbf{W}_{\overrightarrow{xh}} x_i + b_{\overrightarrow{h}}) $$
 
-$$
-\overleftarrow{h}_i = f(\mathbf{W}_{\overleftarrow{hh}} \overleftarrow{h}_{i+1} + \mathbf{W}_{\overleftarrow{xh}} x_i + b_{\overleftarrow{h}})
-$$
+$$ \overleftarrow{h}_i = f(\mathbf{W}_{\overleftarrow{hh}} \overleftarrow{h}_{i+1} + \mathbf{W}_{\overleftarrow{xh}} x_i + b_{\overleftarrow{h}}) $$
 
-$$
-h_i = \overrightarrow{h}_i + \overleftarrow{h}_i
-$$
+$$ h_i = \overrightarrow{h}_i + \overleftarrow{h}_i $$
 
 ---
 
@@ -230,9 +206,7 @@ $$
 - A gate is a function that takes two inputs and produces an output.
 - The output is the pairwise product of the inputs.
 
-$$
-\mathbf{g} = \mathbf{x} \odot \mathbf{y}
-$$
+$$ \mathbf{g} = \mathbf{x} \odot \mathbf{y} $$
 
 ---
 
