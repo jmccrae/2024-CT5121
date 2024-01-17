@@ -89,7 +89,7 @@ $$`
 - We can then compute the attention vectors as before
 
 `$$
-a_{ij}^k = \frac{q_i^k \cdot k_j^k}{\sqrt{d_k}}
+a_{ij}^k = \frac{q_i^k \cdot k_j^k}{\sqrt{d}}
 $$`
 
 ---
@@ -354,3 +354,12 @@ $$`
 - Faster to train
 - Smaller memory footprint
     - Not less than inference on the full model!
+
+---
+
+## Summary
+
+- Transformers are based on self-attention
+- Transformers capture long-range dependencies and are more parallelizable than RNNs
+- Very large models such as BERT and GPT-3 have been trained on large corpora
+- Techniques such as distillation and adapters allow to train smaller models
