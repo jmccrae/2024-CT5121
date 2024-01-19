@@ -30,13 +30,11 @@
 - In self-attention we compute three vectors for each word: Query, Key, Value
 - Each of these vectors is a simple linear transformation of the word embedding
 
-`$$
-\begin{aligned}
+$$ \begin{aligned}
 q_i &= W_Q x_i + b_Q\\
 k_i &= W_K x_i + b_K\\
 v_i &= W_V x_i + b_V
-\end{aligned}
-$$`
+\end{aligned} $$
 
 ---
 
@@ -44,9 +42,7 @@ $$`
 
 - We calculate the attention of a word as the dot product of the query and key vectors
 
-`$$
-a_{ij} = \frac{q_i \cdot k_j}{\sqrt{d_k}}
-$$`
+$$ a_{ij} = \frac{q_i \cdot k_j}{\sqrt{d_k}} $$
 
 _Note: $d_k$ is the dimensionality of the key vectors, it was introduced by
 Vaswani et al. to make the optimization more stable_
@@ -57,9 +53,7 @@ Vaswani et al. to make the optimization more stable_
 
 - As usual, we apply a softmax to get a probability distribution over the words
 
-`$$
-\alpha_{ij} = \frac{\exp(a_{ij})}{\sum_{k=1}^n \exp(a_{ik})}
-$$`
+$$ \alpha_{ij} = \frac{\exp(a_{ij})}{\sum_{k=1}^n \exp(a_{ik})} $$
 
 ---
 
@@ -67,9 +61,7 @@ $$`
 
 - The output vector is then computed as the weighted sum of the value vectors
 
-`$$
-y_i = \sum_{j=1}^n \alpha_{ij} v_j
-$$`
+$$ y_i = \sum_{j=1}^n \alpha_{ij} v_j $$
 
 ---
 
@@ -78,9 +70,7 @@ $$`
 - To improve the representation power, we compute multiple attention vectors from the same input
 - We divide the query, key and value vectors into $h$ equal parts
 
-`$$
-\left( \begin{array}{c} q^1 \\ \vdots \\ q^h \end{array} \right) = W_Q x_i + b_Q
-$$`
+$$ \left( \begin{array}{c} q^1 \\ \vdots \\ q^h \end{array} \right) = W_Q x_i + b_Q $$
 
 ---
 
@@ -88,9 +78,7 @@ $$`
 
 - We can then compute the attention vectors as before
 
-`$$
-a_{ij}^k = \frac{q_i^k \cdot k_j^k}{\sqrt{d}}
-$$`
+$$ a_{ij}^k = \frac{q_i^k \cdot k_j^k}{\sqrt{d}} $$
 
 ---
 
@@ -98,9 +86,7 @@ $$`
 
 - We can calculate all the attentions in a sequence in parallel
 
-`$$
-Q = W_Q X + b_Q
-$$`
+$$ Q = W_Q X + b_Q $$
 
 - Matrix multiplication is highly parallelizable on GPUs
 
@@ -110,13 +96,11 @@ $$`
 
 - We can also calculate all the attention vectors in parallel
 
-`$$
-\begin{aligned}
+$$ \begin{aligned}
 A = \frac{Q K^T}{\sqrt{d_k}}\\
 A' = \text{softmax}(A)\\
 Y = A' V
-\end{aligned}
-$$`
+\end{aligned} $$
 
 ---
 
@@ -146,15 +130,13 @@ $$`
 
 ## Residual Connections
 
-`$$
-\begin{aligned}
+$$ \begin{aligned}
 y &= f(h) + h\\
 h &= g(x) + x\\
 \frac{\partial h}{\partial x} &= \frac{\partial g(x)}{\partial x} + 1\\
 \frac{\partial y}{\partial h} &= \frac{\partial f(h)}{\partial h} + 1\\
 \frac{\partial y}{\partial x} &= \frac{\partial f(h)}{\partial h} \frac{\partial g(x)}{\partial x} + \frac{\partial f(h)}{\partial h} + \frac{\partial g(x)}{\partial x} + 1\\
-\end{aligned}
-$$`
+\end{aligned} $$
 
 ---
 
@@ -204,13 +186,11 @@ $$`
 
 ## Positional Encoding
 
-`$$
-\begin{aligned}
+$$ \begin{aligned}
 PE_{(pos, 2i)} &= \sin(pos / 10000^{2i / d_{model}})\\
 PE_{(pos, 2i+1)} &= \cos(pos / 10000^{2i / d_{model}})\\
 x_{pos} &= x_{pos} + PE_{pos}
-\end{aligned}
-$$`
+\end{aligned} $$
 
 ---
 
@@ -337,9 +317,7 @@ What is the capital of France? [SEP] Paris.
 - The idea is to add a small adapter layer to each transformer layer
 - This adapter layer calculates a low-rank delta, $\Delta W$, that is added to the weights of the self-attention layer
 
-`$$
-W_{new} = W_{old} + \Delta W
-$$`
+$$ W_{new} = W_{old} + \Delta W $$
 
 ---
 
