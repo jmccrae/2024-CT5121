@@ -5,3 +5,20 @@ slides/*.md
 env
 
 lectures/00_outline.ipynb
+lectures/img/03_transformers.pdf
+lectures/img/EEAP.pdf
+lectures/img/GRU.pdf
+lectures/img/LSTM.pdf
+lectures/img/RNN-unrolled.pdf
+lectures/img/RNN.pdf
+lectures/img/RNN_acceptor.pdf
+lectures/img/RNN_attention.pdf
+lectures/img/RNN_bidirectional.pdf
+lectures/img/RNN_language_modelling.pdf
+lectures/img/RNN_tagging.pdf
+lectures/img/feed_forward_bert.pdf
+lectures/img/gating.pdf
+lectures/img/gradient_descent.pdf
+lectures/01_machine_learning_for_NLP.pdf
+lectures/02_recurrent_neural_networks.pdf
+lectures/03_transformers.pdf

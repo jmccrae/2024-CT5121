@@ -322,7 +322,7 @@ $$ W_{new} = W_{old} + \Delta W $$
 ---
 
 <!-- .slide: data-background="#fff" -->
-![Low-Rank Adapters](img/lora.webp)
+![Low-Rank Adapters](img/lora.png)
 
 ---
 
