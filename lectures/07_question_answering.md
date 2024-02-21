@@ -43,7 +43,7 @@ Also referred to as **textual QA** and **Knowledge Base QA**.
 
 ---
 
-![Traditional Architecture of Open-domain QA](img/traditional_qa.svg)
+![Traditional Architecture of Open-domain QA](img/traditional_open_qa.svg)
 
 Based on https://arxiv.org/pdf/2101.00774
 
