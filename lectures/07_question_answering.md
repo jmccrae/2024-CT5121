@@ -43,6 +43,7 @@ Also referred to as **textual QA** and **Knowledge Base QA**.
 
 ---
 
+<!-- .slide: data-background="#ccc" -->
 ![Traditional Architecture of Open-domain QA](img/traditional_open_qa.svg)
 
 Based on https://arxiv.org/pdf/2101.00774
@@ -82,6 +83,7 @@ Based on https://arxiv.org/pdf/2101.00774
 
 ---
 
+<!-- .slide: data-background="#ccc" -->
 ![Retriever-Reader Model](img/retrieve_reader_qa.svg)
 
 Derived from https://arxiv.org/pdf/2101.00774
@@ -105,7 +107,7 @@ Derived from https://arxiv.org/pdf/2101.00774
 
 ---
 
-## Retrieval-Augmented Generation
+### Retrieval-Augmented Generation
 
 * Using a retriever to retrieve relevant documents and then using a generator to generate the answer based on the retrieved documents.
 * This can solve non-factoid questions that require a longer, more complex answer.
@@ -131,6 +133,7 @@ Derived from https://arxiv.org/pdf/2101.00774
 
 ---
 
+<!-- .slide: data-background="#ccc" -->
 ![Architecture for Knowledge Base QA](img/linked_data_qa.svg)
 
 ---
@@ -139,7 +142,7 @@ Derived from https://arxiv.org/pdf/2101.00774
 
 * For KBQA, many questions can be answered by the semantics of the words
 
-> Give me actors born in Berlin?
+> Give me actors born in Berlin
 
 * We need only understand that we are querying for `actor`, `bornIn` and `Berlin`.
 * The structure of the knowledge base will be used to generate the query.
