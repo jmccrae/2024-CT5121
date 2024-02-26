@@ -58,7 +58,7 @@ Based on https://arxiv.org/pdf/2101.00774
 
 ---
 
-## Document Retrieval
+### Document Retrieval
 
 * **Information Retrieval**: Retrieve relevant documents from a large corpus of text.
 * Boolean retrieval, vector space model, and language models are commonly used for this task.
