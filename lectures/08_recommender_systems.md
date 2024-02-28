@@ -126,6 +126,7 @@
 
 ---
 
+<!-- .slide: data-background="#fff" -->
 ![LLM Recommender Paradigms](img/llm4rec_paradigms.png)
 
 From https://arxiv.org/abs/2305.19860
